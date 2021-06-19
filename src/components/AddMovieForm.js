@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
-import { addMovie } from './../actions/movieActions';
-import { connect } from 'react-redux';
-
 import { Link, useHistory } from 'react-router-dom';
-
+import { connectToStore } from '../reduxComInterface/addMovieFormConnect';
+const dummyData = {
+    title: "dummy data",
+    director: "someone",
+    genre: "something",
+    metascore: 55,
+    description:"some text"
+};
 const AddMovieForm = (props) => {
     const { push } = useHistory();
-
+    const {addMovie} = props;
     const [movie, setMovie] = useState({
         title: "",
         director: "",
@@ -14,7 +18,6 @@ const AddMovieForm = (props) => {
         metascore: 0,
         description:""
     });
-
     const handleChange = (e) => {
         setMovie({
             ...movie,
@@ -23,6 +26,8 @@ const AddMovieForm = (props) => {
     }
 
     const handleSubmit = (e) => {
+        e.preventDefault();
+        addMovie(dummyData);
     }
 
     const { title, director, genre, metascore, description } = movie;
@@ -67,4 +72,4 @@ const AddMovieForm = (props) => {
     </div>);
 }
 
-export default AddMovieForm;
+export default connectToStore(AddMovieForm);
