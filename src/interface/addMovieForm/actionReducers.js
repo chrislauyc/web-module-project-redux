@@ -1,4 +1,4 @@
-import { ADD_MOVIE } from '../actions/actionTypes';
+import { ADD_MOVIE } from '../../actions/actionTypes';
 export const addMovieAction=(movie)=>{
     return({type:ADD_MOVIE,payload:movie});
 };

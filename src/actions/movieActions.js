@@ -1,4 +1,4 @@
-import { addMovieAction } from "../componentInterface/addMovieFormRedux";
+import { addMovieAction } from "../interface/addMovieForm/actionReducers";
 import { DELETE_MOVIE } from "./actionTypes";
 
 export const deleteMovie = (id)=>{

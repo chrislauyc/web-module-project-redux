@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import {addMovie} from '../actions/movieActions'
+import {addMovie} from '../../actions/movieActions'
 export const connectToStore=(component)=>{
     const mapStateToProps=(state)=>{
         return{};

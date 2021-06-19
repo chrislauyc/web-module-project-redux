@@ -1,5 +1,5 @@
 import React from 'react';
-import { connectToStore } from '../componentInterface/movieListRedux';
+import { connectToStore } from '../interface/movieList/connectToStore';
 import MovieListItem from './MovieListItem';
 import MovieFooter from './MovieFooter';
 
