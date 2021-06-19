@@ -9,6 +9,7 @@ const Movie = (props) => {
     const movie = movies.find(movie=>movie.id===Number(id));
     const handleDelete=()=>{
         deleteMovie(id);
+        push('/movies');
     };
     return(<div className="modal-page col">
         <div className="modal-dialog">
