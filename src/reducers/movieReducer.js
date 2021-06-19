@@ -1,4 +1,5 @@
 import { addMovieReducer } from '../interface/addMovieForm/actionReducers';
+import {deleteMovieReducer} from '../interface/movie/actionReducers'
 import { ADD_MOVIE, DELETE_MOVIE } from '../actions/actionTypes';
 import movies from './../data.js';
 const initialState = {
@@ -12,9 +13,7 @@ const reducer = (state, action) => {
     }
     switch(action.type) {
         case DELETE_MOVIE:
-            return {
-                movies: state.movies.filter(item=>(action.payload !== item.id))
-            }
+            return deleteMovieReducer(state,action);
         case ADD_MOVIE:
             return addMovieReducer(state,action);
         default:

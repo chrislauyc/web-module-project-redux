@@ -1,7 +1,5 @@
 import { addMovieAction } from "../interface/addMovieForm/actionReducers";
-import { DELETE_MOVIE } from "./actionTypes";
+import { deleteMovieAction } from "../interface/movie/actionReducers";
 
-export const deleteMovie = (id)=>{
-    return({type: DELETE_MOVIE, payload:id});
-}
-export const addMovie = addMovieAction;
+export const deleteMovie =(id)=>deleteMovieAction(id);
+export const addMovie=(movie)=>addMovieAction(movie);
