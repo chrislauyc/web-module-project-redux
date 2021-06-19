@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { connectToStore } from '../reduxComInterface/addMovieFormConnect';
+import { connectToStore } from '../componentInterface/addMovieFormConnect';
 const dummyData = {
     title: "dummy data",
     director: "someone",

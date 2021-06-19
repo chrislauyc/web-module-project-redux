@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, useHistory } from 'react-router-dom';
-import { connectToStore } from '../reduxComInterface/movieRedux';
+import { connectToStore } from '../componentInterface/movieRedux';
 const Movie = (props) => {
     const { id } = useParams();
     const { push } = useHistory();

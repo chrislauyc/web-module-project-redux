@@ -1,4 +1,4 @@
-import { addMovieReducer } from '../reduxComInterface/addMovieFormRedux.js';
+import { addMovieReducer } from '../componentInterface/addMovieFormRedux.js';
 import { ADD_MOVIE, DELETE_MOVIE } from '../actions/actionTypes';
 import movies from './../data.js';
 const initialState = {
