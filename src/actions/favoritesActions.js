@@ -1,6 +1,9 @@
 import { 
-    TOGGLE_FAVORITES,
-    ADD_FAVORITE,
-    REMOVE_FAVORITE
-} from "./actionTypes";
+    toggleFavoritesAction,
+    addFavoriteAction,
+    removeFavoriteAction
 
+} from "../interface/favoriteMovieListRedux";
+export const toggleFavorites=()=>toggleFavoritesAction();
+export const addFavorite=(id)=>addFavoriteAction(id);
+export const removeFavorite=(id)=>removeFavoriteAction(id);

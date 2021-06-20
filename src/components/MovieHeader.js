@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { connectToStore } from '../interface/movieHeader/actionReducers';
+import { connectToStore } from '../interface/movieHeaderRedux';
 const MovieHeader = (props) => {
     const appTitle = props.appTitle;
     const displayFavorites = true;

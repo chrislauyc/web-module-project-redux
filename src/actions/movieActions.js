@@ -1,5 +1,5 @@
-import { addMovieAction } from "../interface/addMovieForm/actionReducers";
-import { deleteMovieAction } from "../interface/movie/actionReducers";
+import { addMovieAction } from "../interface/addMovieFormRedux";
+import { deleteMovieAction } from "../interface/movieRedux";
 
 export const deleteMovie =(id)=>deleteMovieAction(id);
 export const addMovie=(movie)=>addMovieAction(movie);

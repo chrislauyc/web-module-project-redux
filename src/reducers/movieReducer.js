@@ -1,5 +1,5 @@
-import { addMovieReducer } from '../interface/addMovieForm/actionReducers';
-import {deleteMovieReducer} from '../interface/movie/actionReducers'
+import { addMovieReducer } from '../interface/addMovieFormRedux';
+import {deleteMovieReducer} from '../interface/movieRedux'
 import { ADD_MOVIE, DELETE_MOVIE } from '../actions/actionTypes';
 import movies from './../data.js';
 const initialState = {
