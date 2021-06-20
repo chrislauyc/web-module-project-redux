@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
-import { DELETE_MOVIE, REMOVE_FAVORITE } from "../actions/actionTypes";
-import { addFavorite } from "../actions/favoritesActions";
+import { DELETE_MOVIE } from "../actions/actionTypes";
+import { addFavorite, removeFavorite } from "../actions/favoritesActions";
 import { deleteMovie } from "../actions/movieActions";
 
 export const connectToStore=(component)=>{
@@ -11,14 +11,17 @@ export const connectToStore=(component)=>{
     };
     const mapDispatchToProps=(dispatch)=>{
         return{
-            deleteMovie: (id)=>{dispatch(deleteMovie(id))},
+            deleteMovie: (id)=>{
+                dispatch(deleteMovie(id));
+                dispatch(removeFavorite(id));
+            },
             addFavorite: (id)=>{dispatch(addFavorite(id))}
         };
     };
     return connect(mapStateToProps,mapDispatchToProps)(component);
 };
 export const deleteMovieAction=(id)=>{
-    return([{type: DELETE_MOVIE, payload:id},{type:REMOVE_FAVORITE,payload:id}]);
+    return({type: DELETE_MOVIE, payload:id});
 };
 export const deleteMovieReducer=(state,action)=>{
     const newMovies = state.movies.filter(item=>(parseInt(action.payload) !== item.id));

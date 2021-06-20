@@ -5,7 +5,6 @@ import {
     REMOVE_FAVORITE
 } from "../actions/actionTypes";
 import {
-    toggleFavorites,
     addFavorite,
     removeFavorite
 } from "../actions/favoritesActions";
@@ -13,12 +12,12 @@ export const connectToStore=(component)=>{
     const mapStateToProps=(state)=>{
         return{
             favorites:state.favorites.favorites,
+            displayFavorites:state.favorites.displayFavorites,
             movies:state.movie.movies
         };
     };
     const mapDispatchToProps=(dispatch)=>{
         return{
-            toggleFavorites:(id)=>dispatch(toggleFavorites(id)),
             addFavorite:(id)=>dispatch(addFavorite(id)),
             removeFavorite:(id)=>dispatch(removeFavorite(id))
         };
@@ -42,7 +41,10 @@ export const addFavoriteAction=(id)=>{
 export const addFavoriteReducer=(state,action)=>{
     return{
         ...state,
-        favorites:[...state.favorites,action.payload]
+        favorites:{ 
+            ...state.favorites,
+            [action.payload]:''
+        }
     }; 
 };
 // removeFavorite
@@ -52,6 +54,9 @@ export const removeFavoriteAction=(id)=>{
 export const removeFavoriteReducer=(state,action)=>{
     return{
         ...state,
-        favorites:state.favorites.filter(fav=>fav===action.payload)
+        favorites:Object.keys(state.favorites).filter(id=>id!==action.payload).reduce((acc,id)=>{
+            acc[id] = '';
+            return acc;
+        },{})
     };
 }

@@ -9,7 +9,7 @@ import {
     removeFavoriteReducer
 } from '../interface/favoriteMovieListRedux';
 const initialState={
-    favorites:[],
+    favorites:{},
     displayFavorites:false
 };
 // toggleFavorites,

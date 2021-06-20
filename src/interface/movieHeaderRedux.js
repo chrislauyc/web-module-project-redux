@@ -1,10 +1,17 @@
 import { connect } from "react-redux";
+import { toggleFavorites } from "../actions/favoritesActions";
 
 export const connectToStore=(component)=>{
     const mapStateToProps=(state)=>{
         return{
-            appTitle:state.movie.appTitle
+            appTitle:state.movie.appTitle,
+            displayFavorites:state.favorites.displayFavorites
         };
     };
-    return connect(mapStateToProps,null)(component);
+    const mapDispatchToProps=(dispatch)=>{
+        return{
+            toggleFavorites:()=>dispatch(toggleFavorites())
+        };
+    };
+    return connect(mapStateToProps,mapDispatchToProps)(component);
 };
