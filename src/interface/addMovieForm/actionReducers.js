@@ -16,10 +16,10 @@ export const addMovieAction=(movie)=>{
     return({type:ADD_MOVIE,payload:movie});
 };
 export const addMovieReducer=(state,action)=>{
-    console.log(state);
+    console.log('addmoviereducer',state);
     const newMovie = {
         ...action.payload,
-        id:state.movies.length,
+        id:state.movies.reduce((acc,movie)=>Math.max(acc,movie.id),0)+1,
     };
     return{
         ...state,
