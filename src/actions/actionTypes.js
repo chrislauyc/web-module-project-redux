@@ -1,2 +1,5 @@
 export const DELETE_MOVIE = "DELETE_MOVIE";
 export const ADD_MOVIE = "ADD_MOVIE";
+export const TOGGLE_FAVORITES = "TOGGLE_FAVORITES";
+export const ADD_FAVORITES = "ADD_FAVORITES";
+export const REMOVE_FAVORITE = "REMOVE_FAVORITE";

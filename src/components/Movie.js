@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, useHistory } from 'react-router-dom';
-import { connectToStore } from '../interface/movie/connectToStore';
+import { connectToStore } from '../interface/movie/actionReducers';
 const Movie = (props) => {
     const { id } = useParams();
     const { push } = useHistory();
